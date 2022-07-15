@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class KeywordCount {
+public class CountingKeyword {
     public static void main(String[] args) {
         String content = "";
         if (args.length != 1) {
