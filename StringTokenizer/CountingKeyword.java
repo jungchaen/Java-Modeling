@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class CountingKeyword {
+public class KeywordCount {
     public static void main(String[] args) {
         String content = "";
         if (args.length != 1) {
@@ -54,40 +54,32 @@ public class CountingKeyword {
     }
 
     static void summerize(String[] content) {
-        // JAVA Keywords 54
-        String[] keywords = { "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class",
-                "const", "continue", "default", "do", "double", "else", "enum", "extends", "false", "final", "finally",
-                "float", "for", "If", "goto", "Implements", "Import", "Instanceof", "Int", "interface", "long",
-                "native", "new", "null", "package", "private", "protected", "public", "return", "short", "static",
-                "strict", "strictfp", "super", "switch", "synchronize", "this", "throw", "throws", "transient", "true",
-                "try", "void", "volatile", "while" };
+        // JAVA Keywords
+        String[] keywords = { "abstract", "default", "If", "package", "this", "assert", "do", "goto", "private",
+                "throw", "boolean", "double", "Implements", "protected", "throws", "break", "else", "Import", "public",
+                "transient", "byte", "enum", "Instanceof", "return", "true", "case", "extends", "Int", "short", "try",
+                "catch", "false", "interface", "static", "void", "char", "final", "long", "strictfp", "volatile",
+                "class", "finally", "native", "super", "while", "const", "float", "new", "switch", "continue", "for",
+                "null", "synchronize" };
 
         // initialize count
-        int[] count = new int[54];
+        int[] count = new int[keywords.length];
 
         // increase count
         for (int i = 0; i < content.length; i++) {
-            for (int j = 0; j < 54; j++) {
+            for (int j = 0; j < keywords.length; j++) {
                 if (content[i].equals(keywords[j])) {
-                    count[i] += 1;
+                    count[j] += 1;
                 }
             }
         }
 
-        // find same keyword int token
-        for (int i = 0; i < content.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (content[i].equals(content[j])) {
-                    count[j] += 1;
-                    count[i] = 0;
-                }
-            }
-        }
         // print count
         for (int i = 0; i < keywords.length; i++) {
             if (count[i] > 0) {
-                System.out.println(content[i] + ": " + count[i]);
+                System.out.println(keywords[i] + ": " + count[i]);
             }
+
         }
     }
 }
