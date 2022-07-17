@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MazeRecursize {
+public class RecursiveSolveMaze {
     private static int[][] maze;
     public static int sizeRow;
     public static int sizeCol;
