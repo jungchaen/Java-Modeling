@@ -1,16 +1,9 @@
-public class Attackable {
-    public static Boolean attacked(Unit attack, Unit beAttacked) {
-        if (attack instanceof Ground && (beAttacked instanceof Fly || beAttacked instanceof HybridGround)) {
+public class Attackable { // 공격을 할 수 있는지 없는지를 판단하는 타입
+    public static Boolean checkAttackable(Unit attackUnit, Unit beAttackedUnit) {
+        if (attackUnit instanceof Ground && beAttackedUnit instanceof Fly) {
             return false;
         } else {
-            beAttacked.setHp(beAttacked.getDamage() - attack.getDamage());
-            if (beAttacked.getHp() <= 0) {
-                System.out.println(beAttacked.getName() + "가 소멸되었습니다.");
-                return true;
-            } else {
-                return true;
-            }
-
+            return true;
         }
     }
 }
