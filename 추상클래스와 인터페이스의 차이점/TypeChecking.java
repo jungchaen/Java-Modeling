@@ -2,21 +2,21 @@ public class TypeChecking {
     public static void isFlyable(Animal x) {
         try {
             if (x instanceof Flyable) {
-                System.out.println(x.type() + "는(은) 날 수 있어.");
+                System.out.println(x.type() + "is can fly.");
             } else {
                 throw new Exception();
             }
         } catch (Exception e) {
-            System.out.println("날 수 없는 Animal을 입력하였습니다.");
+            System.out.println("You have entered an Animal that cannot fly.");
         }
 
     }
 
     public static void isSwimable(Animal x) {
         if (x instanceof Swimable) {
-            System.out.println(x.type() + "는(은) 헤엄칠 수 있어.");
+            System.out.println(x.type() + "is can swim.");
         } else {
-            System.out.println(x.type() + "는(은) 헤엄못쳐.");
+            System.out.println(x.type() + "is can't swim.");
         }
     }
 
